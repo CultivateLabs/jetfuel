@@ -19,7 +19,7 @@ module Suspenders
   config.action_controller.action_on_unpermitted_parameters = :raise
       RUBY
       inject_into_file(
-        "config/environments/development.rb",
+        "config/application.rb",
         action_on_unpermitted_parameters,
         before: "\nend"
       )
