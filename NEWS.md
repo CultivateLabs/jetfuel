@@ -1,3 +1,13 @@
+1.12.0 (May 23, 2014)
+
+* Generate `config/newrelic.yml`
+* Include [formulaic](https://github.com/thoughtbot/formulaic) gem for
+integration testing
+* Removed dependency on `timecop` gem. Calls to `Timecop.freeze` can be
+replaced by calls to `travel_to`, added in `rails` 4.1. To learn about the new
+helpers, read [this blog
+post](http://brandonhilkert.com/blog/rails-4-1-travel-to-test-helper)
+
 1.11.0 (May 17, 2014)
 
 * Generate a Rails 4.1.1 app and implement fixes for compatibility.
