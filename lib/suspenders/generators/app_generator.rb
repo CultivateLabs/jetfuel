@@ -32,11 +32,11 @@ module Suspenders
       invoke :configure_app
       invoke :setup_stylesheets
       invoke :setup_helpers
-      invoke :install_leather
       invoke :copy_miscellaneous_files
       invoke :customize_error_pages
       invoke :remove_routes_comment_lines
       invoke :setup_git
+      invoke :install_leather
       invoke :setup_devise
       invoke :setup_database
       invoke :create_heroku_apps
