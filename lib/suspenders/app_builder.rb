@@ -266,9 +266,9 @@ end
 
     def install_devise
       run 'rails g devise:install'
-      # remove_file 'config/initializers/devise.rb'
-      # copy_file 'devise.rb',
-      #   'config/initializers/devise.rb'
+      remove_file 'config/initializers/devise.rb'
+      copy_file 'devise.rb',
+        'config/initializers/devise.rb'
     end
 
     def create_devise_user
