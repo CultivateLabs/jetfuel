@@ -4,9 +4,4 @@
 @import 'bootstrap_variables';
 @import 'devise';
 @import 'font-awesome';
-@import 'flashes'
-
-.flash { 
-  @include border-top-radius(0px); 
-  @include border-bottom-radius(0px); 
-}
+@import 'flashes';
