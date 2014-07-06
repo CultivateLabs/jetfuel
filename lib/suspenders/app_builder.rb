@@ -243,6 +243,7 @@ end
 
     def setup_foreman
       copy_file 'sample.env', '.env'
+      replace_in_file ".env", /development_secret/, generate_secret
       copy_file 'Procfile', 'Procfile'
     end
 
