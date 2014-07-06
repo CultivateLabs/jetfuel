@@ -31,7 +31,7 @@ module Suspenders
       invoke :setup_coffeescript
       invoke :configure_app
       invoke :setup_stylesheets
-      invoke :install_bitters
+      invoke :install_leather
       invoke :copy_miscellaneous_files
       invoke :customize_error_pages
       invoke :remove_routes_comment_lines
@@ -135,9 +135,9 @@ module Suspenders
       build :setup_stylesheets
     end
 
-    def install_bitters
-      say 'Install Bitters'
-      build :install_bitters
+    def install_leather
+      say 'Install Leather'
+      build :install_leather
     end
 
     def setup_git
