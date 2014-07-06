@@ -36,12 +36,12 @@ module Suspenders
       invoke :customize_error_pages
       invoke :remove_routes_comment_lines
       invoke :setup_git
-      invoke :install_leather
-      invoke :setup_devise
       invoke :setup_database
       invoke :create_heroku_apps
       invoke :create_github_repo
       invoke :setup_segment_io
+      invoke :install_leather
+      invoke :setup_devise
       invoke :outro
     end
 

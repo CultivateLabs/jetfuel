@@ -273,6 +273,7 @@ end
 
     def create_devise_user
       run 'rails g devise User'
+      run 'rake db:migrate'
     end
 
     def gitignore_files
