@@ -142,6 +142,11 @@ end
         ''
     end
 
+    def add_bootstrap_js
+      inject_into_file 'app/assets/javascripts/application.js', "//= require bootstrap\n",
+        after: /\/\/= require jquery_ujs\n/
+    end
+
     def use_postgres_config_template
       template 'postgresql_database.yml.erb', 'config/database.yml',
         force: true

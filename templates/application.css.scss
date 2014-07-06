@@ -3,3 +3,8 @@
 @import 'bourbon';
 @import 'bootstrap_variables';
 @import 'devise';
+
+.flash { 
+  @include border-top-radius(0px); 
+  @include border-bottom-radius(0px); 
+}

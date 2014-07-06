@@ -123,6 +123,7 @@ module Suspenders
     def setup_coffeescript
       say 'Setting up CoffeeScript defaults'
       build :remove_turbolinks
+      build :add_bootstrap_js
     end
 
     def configure_app
