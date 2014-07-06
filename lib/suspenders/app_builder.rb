@@ -246,9 +246,9 @@ end
       copy_file 'application.css.scss',
         'app/assets/stylesheets/application.css.scss'
     end
-
-    def install_bitters
-      run "bitters install --path app/assets/stylesheets"
+    
+    def install_leather
+      run "rails g leather:install"
     end
 
     def gitignore_files
