@@ -19,6 +19,7 @@ RSpec.configure do |config|
 
   config.include Features, type: :feature
   config.include Formulaic::Dsl, type: :feature
+  config.include Devise::TestHelpers, type: :controller
 
   config.infer_base_class_for_anonymous_controllers = false
   config.order = 'random'
