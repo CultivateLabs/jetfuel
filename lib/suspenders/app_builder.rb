@@ -194,7 +194,7 @@ end
 
     def configure_background_jobs_for_rspec
       copy_file 'background_jobs_rspec.rb', 'spec/support/background_jobs.rb'
-      run 'rails g delayed_job:active_record'
+      run 'bundle exec rails g delayed_job:active_record'
     end
 
     def configure_action_mailer_in_specs
@@ -234,7 +234,7 @@ end
     end
 
     def generate_rspec
-      generate 'rspec:install'
+      run 'bundle exec rails g rspec:install'
     end
 
     def configure_unicorn
@@ -256,7 +256,7 @@ end
     end
     
     def install_leather
-      run "rails g leather:install"
+      run "bundle exec rails g leather:install"
     end
 
     def setup_helpers
@@ -266,14 +266,14 @@ end
     end
 
     def install_devise
-      run 'rails g devise:install'
+      run 'bundle exec rails g devise:install'
       remove_file 'config/initializers/devise.rb'
       copy_file 'devise.rb',
         'config/initializers/devise.rb'
     end
 
     def create_devise_user
-      run 'rails g devise User'
+      run 'bundle exec rails g devise User'
       run 'rake db:migrate'
     end
 
