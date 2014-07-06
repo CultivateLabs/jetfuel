@@ -242,7 +242,14 @@ end
     end
 
     def setup_foreman
-      copy_file 'sample.env', '.sample.env'
+      secret = run 'rake secret'
+
+      copy_file 'sample.env', '.env'
+
+      replace_in_file '.env',
+        /development_secret/,
+        secret
+
       copy_file 'Procfile', 'Procfile'
     end
 
@@ -265,11 +272,14 @@ end
     end
 
     def install_devise
-      run "rails g devise:install"
+      run 'rails g devise:install'
+      remove_file 'config/initializers/devise.rb'
+      copy_file 'devise.rb',
+        'config/initializers/devise.rb'
     end
 
     def create_devise_user
-      run "rails g devise User"
+      run 'rails g devise User'
     end
 
     def gitignore_files
