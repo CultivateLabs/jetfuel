@@ -7,15 +7,7 @@ Suspenders is the base Rails application used at [thoughtbot](http://thoughtbot.
 Installation
 ------------
 
-First install the suspenders gem with Bundler. Add this to your project directory Gemfile:
-
-    gem "suspenders", git: "https://github.com/dvanderbeek/suspenders.git"
-
-And run:
-
-    $ bundle
-
-or install this fork of the suspenders gem:
+First, install this fork of the suspenders gem:
 
     git clone https://github.com/dvanderbeek/suspenders.git
 
@@ -36,12 +28,6 @@ This will create a Rails app in `projectname` using the latest version of Rails.
 By default this script creates a new git repository. See below if you
 want to use it against an existing repo.
 
-Finally, follow these steps to finish setting up the app:
-
-* in `config/initializers/devise.rb`, add the secret_key config setting that you see in the installation logs
-* run `rake db:migrate`
-* change `.sample.env` to `.env`
-
 Gemfile
 -------
 
@@ -53,7 +39,7 @@ It includes application gems like:
 
 * [Airbrake](https://github.com/airbrake/airbrake) for exception notification
 * [Bourbon](https://github.com/thoughtbot/bourbon) for Sass mixins
-* [Bitters](https://github.com/thoughtbot/bitters) for scaffold application styles
+* [Twitter Bootstrap](https://getbootstrap.com) for scaffold application styles
 * [Delayed Job](https://github.com/collectiveidea/delayed_job) for background
   processing
 * [Email Validator](https://github.com/balexand/email_validator) for email
