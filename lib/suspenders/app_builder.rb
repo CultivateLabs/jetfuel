@@ -251,6 +251,14 @@ end
       run "rails g leather:install"
     end
 
+    def install_devise
+      run "rails g devise:install"
+    end
+
+    def create_devise_user
+      run "rails g devise User"
+    end
+
     def gitignore_files
       remove_file '.gitignore'
       copy_file 'suspenders_gitignore', '.gitignore'
