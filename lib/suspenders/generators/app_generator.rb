@@ -36,6 +36,7 @@ module Suspenders
       invoke :customize_error_pages
       invoke :remove_routes_comment_lines
       invoke :setup_git
+      invoke :setup_devise
       invoke :setup_database
       invoke :create_heroku_apps
       invoke :create_github_repo
@@ -52,6 +53,12 @@ module Suspenders
       end
 
       bundle_command 'install'
+    end
+
+    def setup_devise
+      say 'Install Devise'
+      build :install_devise
+      build :create_devise_user
     end
 
     def setup_database
