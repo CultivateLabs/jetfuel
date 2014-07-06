@@ -242,14 +242,7 @@ end
     end
 
     def setup_foreman
-      secret = run 'rake secret'
-
       copy_file 'sample.env', '.env'
-
-      replace_in_file '.env',
-        /development_secret/,
-        secret
-
       copy_file 'Procfile', 'Procfile'
     end
 
