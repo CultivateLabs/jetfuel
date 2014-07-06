@@ -31,6 +31,7 @@ module Suspenders
       invoke :setup_coffeescript
       invoke :configure_app
       invoke :setup_stylesheets
+      invoke :setup_helpers
       invoke :install_leather
       invoke :copy_miscellaneous_files
       invoke :customize_error_pages
@@ -140,6 +141,11 @@ module Suspenders
     def setup_stylesheets
       say 'Set up stylesheets'
       build :setup_stylesheets
+    end
+
+    def setup_helpers
+      say 'Set up helpers'
+      build :setup_helpers
     end
 
     def install_leather

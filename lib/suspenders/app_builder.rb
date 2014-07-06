@@ -251,6 +251,12 @@ end
       run "rails g leather:install"
     end
 
+    def setup_helpers
+      remove_file 'app/helpers/application_helper.rb'
+      copy_file 'application_helper.rb',
+        'app/helpers/application_helper.rb'
+    end
+
     def install_devise
       run "rails g devise:install"
     end
