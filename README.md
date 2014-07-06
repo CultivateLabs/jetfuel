@@ -7,7 +7,15 @@ Suspenders is the base Rails application used at [thoughtbot](http://thoughtbot.
 Installation
 ------------
 
-First install this fork of the suspenders gem:
+First install the suspenders gem with Bundler. Add this to your project directory Gemfile:
+
+    gem "suspenders", git: "https://github.com/dvanderbeek/suspenders.git"
+
+And run:
+
+    $ bundle
+
+or install this fork of the suspenders gem:
 
     git clone https://github.com/dvanderbeek/suspenders.git
 
