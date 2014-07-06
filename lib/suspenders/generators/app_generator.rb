@@ -131,7 +131,7 @@ module Suspenders
       build :configure_action_mailer
       build :configure_time_zone
       build :configure_time_formats
-      # build :configure_rack_timeout
+      build :configure_rack_timeout
       build :disable_xml_params
       build :fix_i18n_deprecation_warning
       build :setup_default_rake_task
