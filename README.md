@@ -66,7 +66,6 @@ It includes application gems like:
   helper
 * [High Voltage](https://github.com/thoughtbot/high_voltage) for static pages
 * [jQuery Rails](https://github.com/rails/jquery-rails) for jQuery
-* [Neat](https://github.com/thoughtbot/neat) for semantic grids
 * [Postgres](https://github.com/ged/ruby-pg) for access to the Postgres database
 * [Rack Timeout](https://github.com/kch/rack-timeout) to abort requests that are
   taking too long
