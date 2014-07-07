@@ -57,6 +57,7 @@ It includes application gems like:
 * [Airbrake](https://github.com/airbrake/airbrake) for exception notification
 * [Bourbon](https://github.com/thoughtbot/bourbon) for Sass mixins
 * [Twitter Bootstrap](https://getbootstrap.com) for scaffold application styles
+* [Leather](https://github.com/dvanderbeek/leather) for Devise with styled views, a bootstrap UI Kit page, and some useful bootstrap component helpers
 * [Delayed Job](https://github.com/collectiveidea/delayed_job) for background
   processing
 * [Email Validator](https://github.com/balexand/email_validator) for email
