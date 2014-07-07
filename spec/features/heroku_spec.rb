@@ -11,7 +11,7 @@ feature 'Heroku' do
     expect(FakeHeroku).to have_configured_vars('production', 'SECRET_KEY_BASE')
 
     bin_setup = IO.read("#{project_path}/bin/setup")
-    app_name = SuspendersTestHelpers::APP_NAME
+    app_name = JetfuelTestHelpers::APP_NAME
 
     expect(bin_setup).to include("heroku join --app #{app_name}-staging")
     expect(bin_setup).to include("heroku join --app #{app_name}-production")

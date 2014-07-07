@@ -162,7 +162,7 @@ end
     end
 
     def set_ruby_to_version_being_used
-      create_file '.ruby-version', "#{Suspenders::RUBY_VERSION}\n"
+      create_file '.ruby-version', "#{Jetfuel::RUBY_VERSION}\n"
     end
 
     def setup_heroku_specific_gems
