@@ -2,7 +2,7 @@
 
 Jetfuel is the base Rails application used at [flyoverworks](http://flyoverworks.com/).
 
-Installation
+Installation & New App Creation
 ------------
 
 First, install the gem:
@@ -18,7 +18,7 @@ This will create a Rails app in `projectname` using the latest version of Rails.
 By default this script creates a new git repository. See below if you
 want to use it against an existing repo.
 
-Set Up App
+Set Up Existing App
 ----------
 
 Get the code.
