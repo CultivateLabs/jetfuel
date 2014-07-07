@@ -1,27 +1,19 @@
-# Suspenders [![Build Status](https://secure.travis-ci.org/thoughtbot/suspenders.png?branch=master)](http://travis-ci.org/thoughtbot/suspenders)
+# Jetfuel [![Build Status](https://secure.travis-ci.org/thoughtbot/suspenders.png?branch=master)](http://travis-ci.org/thoughtbot/suspenders)
 
-Suspenders is the base Rails application used at [thoughtbot](http://thoughtbot.com/community).
+Jetfuel is the base Rails application used at [flyoverworks](http://flyoverworks.com/).
 
   ![Suspenders boy](http://media.tumblr.com/1TEAMALpseh5xzf0Jt6bcwSMo1_400.png)
 
 Installation
 ------------
 
-First, install this fork of the suspenders gem:
+First, install the gem:
 
-    git clone https://github.com/dvanderbeek/suspenders.git
-
-    cd suspenders
-
-    gem build suspenders.gemspec
-
-    cd ../
-
-    gem install suspenders/suspenders-<< VERSION >>.gem
+    gem install jetfuel
 
 Then run:
 
-    suspenders projectname
+    jetfuel projectname
 
 This will create a Rails app in `projectname` using the latest version of Rails.
 
@@ -31,7 +23,7 @@ want to use it against an existing repo.
 Gemfile
 -------
 
-To see the latest and greatest gems, look at Suspenders'
+To see the latest and greatest gems, look at Jetfuel's
 [Gemfile](templates/Gemfile.erb), which will be appended to the default
 generated projectname/Gemfile.
 
@@ -90,7 +82,7 @@ And testing gems like:
 Other goodies
 -------------
 
-Suspenders also comes with:
+Jetfuel also comes with:
 
 * The [`./bin/setup`][bin] convention for new developer setup
 * Rails' flashes set up and in application layout
@@ -120,7 +112,7 @@ Heroku
 
 You can optionally create Heroku staging and production apps:
 
-    suspenders app --heroku true
+    jetfuel app --heroku true
 
 This:
 
@@ -135,7 +127,7 @@ Git
 This will initialize a new git repository for your Rails app. You can
 bypass this with the `--skip-git` option:
 
-    suspenders app --skip-git true
+    jetfuel app --skip-git true
 
 GitHub
 ------
@@ -144,7 +136,7 @@ You can optionally create a GitHub repository for the suspended Rails app. It
 requires that you have [Hub](https://github.com/github/hub) on your system:
 
     curl http://hub.github.com/standalone -sLo ~/bin/hub && chmod +x ~/bin/hub
-    suspenders app --github organization/project
+    jetfuel app --github organization/project
 
 This has the same effect as running:
 
@@ -153,10 +145,10 @@ This has the same effect as running:
 Dependencies
 ------------
 
-Suspenders requires the latest version of Ruby.
+Jetfuel requires the latest version of Ruby.
 
-Some gems included in Suspenders have native extensions. You should have GCC
-installed on your machine before generating an app with Suspenders.
+Some gems included in Jetfuel have native extensions. You should have GCC
+installed on your machine before generating an app with Jetfuel.
 
 Use [OS X GCC Installer](https://github.com/kennethreitz/osx-gcc-installer/) for
 Snow Leopard (OS X 10.6).
@@ -180,7 +172,7 @@ If you have problems, please create a
 Contributing
 ------------
 
-To update Suspenders' Ruby version, change `.ruby-version` and `.travis.yml`.
+To update Jetfuel's Ruby version, change `.ruby-version` and `.travis.yml`.
 
 Please see CONTRIBUTING.md for further details.
 
@@ -189,13 +181,13 @@ Credits
 
 ![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
 
-Suspenders is maintained and funded by
-[thoughtbot, inc](http://thoughtbot.com/community).
+Jetfuel is maintained and funded by
+[flyoverworks, inc](http://flyoverworks.com/).
 
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
 License
 -------
 
-Suspenders is Copyright © 2008-2014 thoughtbot. It is free software, and may be
+Jetfuel is Copyright © 2008-2014 thoughtbot. It is free software, and may be
 redistributed under the terms specified in the LICENSE file.
