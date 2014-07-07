@@ -18,6 +18,33 @@ This will create a Rails app in `projectname` using the latest version of Rails.
 By default this script creates a new git repository. See below if you
 want to use it against an existing repo.
 
+Set Up App
+----------
+
+Get the code.
+
+    git clone git@github.com:organization/app.git
+
+Set up the app's dependencies.
+
+    cd project
+    ./bin/setup
+
+Use [Heroku config](https://github.com/ddollar/heroku-config) to get `ENV`
+variables.
+
+    heroku config:pull --remote staging
+
+Delete extra lines in `.env`, leaving only those needed for app to function
+properly. For example: `BRAINTREE_MERCHANT_ID` and `S3_SECRET`.
+
+Use [Foreman](https://github.com/ddollar/foreman) to run the app locally.
+
+    foreman start
+
+It uses your `.env` file and `Procfile` to run processes just like Heroku's
+[Cedar](https://devcenter.heroku.com/articles/cedar/) stack.
+
 Gemfile
 -------
 
