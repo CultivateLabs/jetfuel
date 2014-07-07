@@ -2,8 +2,6 @@
 
 Jetfuel is the base Rails application used at [flyoverworks](http://flyoverworks.com/).
 
-  ![Suspenders boy](http://media.tumblr.com/1TEAMALpseh5xzf0Jt6bcwSMo1_400.png)
-
 Installation
 ------------
 
