@@ -14,7 +14,7 @@ module JetfuelTestHelpers
       Bundler.with_clean_env do
         ENV['TESTING'] = '1'
 
-        %x(#{suspenders_bin} #{APP_NAME} #{arguments})
+        %x(#{jetfuel_bin} #{APP_NAME} #{arguments})
       end
     end
   end
@@ -39,8 +39,8 @@ module JetfuelTestHelpers
     @tmp_path ||= Pathname.new("#{root_path}/tmp")
   end
 
-  def suspenders_bin
-    File.join(root_path, 'bin', 'suspenders')
+  def jetfuel_bin
+    File.join(root_path, 'bin', 'jetfuel')
   end
 
   def root_path

@@ -4,7 +4,7 @@ We love pull requests. Here's a quick guide.
 
 Fork the repo:
 
-    git clone git@github.com:thoughtbot/suspenders.git
+    git clone https://github.com/FlyoverWorks/jetfuel.git
 
 Set up your machine:
 
