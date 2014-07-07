@@ -217,7 +217,7 @@ module Jetfuel
     protected
 
     def get_builder_class
-      Suspenders::AppBuilder
+      Jetfuel::AppBuilder
     end
 
     def using_active_record?
