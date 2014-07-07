@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Heroku' do
   scenario 'Suspend a project with --heroku=true' do
-    run_suspenders('--heroku=true')
+    run_jetfuel('--heroku=true')
 
     expect(FakeHeroku).to have_gem_included(project_path, 'rails_12factor')
     expect(FakeHeroku).to have_created_app_for('staging')

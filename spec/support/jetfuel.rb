@@ -9,7 +9,7 @@ module JetfuelTestHelpers
     FileUtils.mkdir_p(tmp_path)
   end
 
-  def run_suspenders(arguments = nil)
+  def run_jetfuel(arguments = nil)
     Dir.chdir(tmp_path) do
       Bundler.with_clean_env do
         ENV['TESTING'] = '1'

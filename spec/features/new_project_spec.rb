@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Suspend a new project with default configuration' do
   scenario 'specs pass' do
-    run_suspenders
+    run_jetfuel
 
     Dir.chdir(project_path) do
       Bundler.with_clean_env do
@@ -12,7 +12,7 @@ feature 'Suspend a new project with default configuration' do
   end
 
   scenario 'staging config is inherited from production' do
-    run_suspenders
+    run_jetfuel
 
     staging_file = IO.read("#{project_path}/config/environments/staging.rb")
     config_stub = "Rails.application.configure do"
@@ -22,7 +22,7 @@ feature 'Suspend a new project with default configuration' do
   end
 
   scenario 'generated .ruby-version is pulled from Suspenders .ruby-version' do
-    run_suspenders
+    run_jetfuel
 
     ruby_version_file = IO.read("#{project_path}/.ruby-version")
 
@@ -30,7 +30,7 @@ feature 'Suspend a new project with default configuration' do
   end
 
   scenario 'secrets.yml reads secret from env' do
-    run_suspenders
+    run_jetfuel
 
     secrets_file = IO.read("#{project_path}/config/secrets.yml")
 
@@ -38,13 +38,13 @@ feature 'Suspend a new project with default configuration' do
   end
 
   scenario 'action mailer support file is added' do
-    run_suspenders
+    run_jetfuel
 
     expect(File).to exist("#{project_path}/spec/support/action_mailer.rb")
   end
 
   scenario 'newrelic.yml reads NewRelic license from env' do
-    run_suspenders
+    run_jetfuel
 
     newrelic_file = IO.read("#{project_path}/config/newrelic.yml")
 
@@ -54,7 +54,7 @@ feature 'Suspend a new project with default configuration' do
   end
 
   scenario 'records pageviews through Segment.io if ENV variable set' do
-    run_suspenders
+    run_jetfuel
 
     expect(analytics_partial).
       to include("<% if ENV['SEGMENT_IO_KEY'] %>")
