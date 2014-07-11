@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jetfuel (1.18.5)
+    jetfuel (1.18.6)
       bundler (~> 1.3)
       rails (= 4.1.1)
 
