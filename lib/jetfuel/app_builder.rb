@@ -30,10 +30,6 @@ module Jetfuel
       run 'chmod a+x bin/setup'
     end
 
-    def provide_dev_prime_task
-      copy_file 'development_seeds.rb', 'lib/tasks/development_seeds.rake'
-    end
-
     def configure_generators
       config = <<-RUBY
     config.generators do |generate|
