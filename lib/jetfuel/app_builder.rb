@@ -55,6 +55,14 @@ module Jetfuel
       copy_file 'factory_girl_rspec.rb', 'spec/support/factory_girl.rb'
     end
 
+    def setup_guard
+      copy_file 'Guardfile', 'Guardfile'
+    end
+
+    def configure_poltergeist
+      copy_file 'poltergeist.rb', 'spec/support/poltergeist.rb'
+    end
+
     def configure_newrelic
       template 'newrelic.yml.erb', 'config/newrelic.yml'
     end
@@ -182,6 +190,8 @@ end
     def configure_rspec
       remove_file 'spec/spec_helper.rb'
       copy_file 'spec_helper.rb', 'spec/spec_helper.rb'
+      remove_file '.rspec'
+      copy_file '.rspec', '.rspec'
     end
 
     def configure_travis
