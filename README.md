@@ -93,8 +93,9 @@ And development gems like:
 And testing gems like:
 
 * [Capybara](https://github.com/jnicklas/capybara) and
-  Poltergeist for
+  [Poltergeist](https://github.com/teampoltergeist/poltergeist) for
   integration testing
+* [Guard](https://github.com/guard/guard-rspec) for automatically running your specs
 * [Factory Girl](https://github.com/thoughtbot/factory_girl) for test data
 * [Formulaic](https://github.com/thoughtbot/formulaic) for integration testing
   HTML forms
