@@ -93,7 +93,7 @@ And development gems like:
 And testing gems like:
 
 * [Capybara](https://github.com/jnicklas/capybara) and
-  [Capybara Webkit](https://github.com/thoughtbot/capybara-webkit) for
+  Poltergeist for
   integration testing
 * [Factory Girl](https://github.com/thoughtbot/factory_girl) for test data
 * [Formulaic](https://github.com/thoughtbot/formulaic) for integration testing
