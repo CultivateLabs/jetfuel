@@ -11,12 +11,7 @@ bundle install
 
 # Set up configurable environment variables
 if [ ! -f .env ]; then
-  cp .sample.env .env
-  # Set SECRET_KEY_BASE in .env
-  token = SecureRandom.hex(64)
-  text = File.read('.env')
-  replace = text.gsub(/development_secret/, token)
-  File.open('.env', "w") { |file| file.puts replace }
+  cp sample.env .env
 fi
 
 # Set up database and add any development seed data
