@@ -205,15 +205,11 @@ Please see CONTRIBUTING.md for further details.
 Credits
 -------
 
-![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
-
-Jetfuel is maintained and funded by
-[flyoverworks, inc](http://flyoverworks.com/).
-
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+Jetfuel is a for of thoughtbot's suspenders gem and is maintained by
+[FlyoverWorks, inc](http://flyoverworks.com/).
 
 License
 -------
 
-Jetfuel is Copyright © 2008-2014 thoughtbot. It is free software, and may be
+Jetfuel is Copyright © 2014 FlyoverWorks. It is free software, and may be
 redistributed under the terms specified in the LICENSE file.
