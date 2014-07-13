@@ -207,7 +207,7 @@ module Jetfuel
     end
 
     def outro
-      say 'Congratulations! You just pulled our suspenders.'
+      say 'Congratulations! You are all fueled up.'
       say "Remember to run 'rails generate airbrake' with your API key."
     end
 
