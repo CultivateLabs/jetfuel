@@ -258,8 +258,8 @@ end
       remove_file 'app/assets/stylesheets/application.css'
       copy_file 'application.css.scss',
         'app/assets/stylesheets/application.css.scss'
-      copy_file 'flashes.css.scss',
-        'app/assets/stylesheets/flashes.css.scss'
+      copy_file '_flashes.css.scss',
+        'app/assets/stylesheets/_flashes.css.scss'
     end
     
     def install_leather
