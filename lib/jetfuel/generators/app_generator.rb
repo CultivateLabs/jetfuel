@@ -9,6 +9,9 @@ module Jetfuel
     class_option :heroku, :type => :boolean, :aliases => '-H', :default => false,
       :desc => 'Create staging and production Heroku apps'
 
+    class_option :capistrano, :type => :boolean, :aliases => '-C', :default => false,
+      :desc => 'Install capistrano'
+
     class_option :github, :type => :string, :aliases => '-G', :default => nil,
       :desc => 'Create Github repository and add remote origin pointed to repo'
 
@@ -38,6 +41,7 @@ module Jetfuel
       invoke :setup_git
       invoke :setup_database
       invoke :create_heroku_apps
+      invoke :install_capistrano
       invoke :create_github_repo
       invoke :setup_segment_io
       invoke :install_leather
@@ -51,6 +55,10 @@ module Jetfuel
 
       if options[:heroku]
         build :setup_heroku_specific_gems
+      end
+
+      if options[:capistrano]
+        build :setup_capistrano_specific_gems
       end
 
       bundle_command 'install'
@@ -169,6 +177,13 @@ module Jetfuel
         build :create_heroku_apps
         build :set_heroku_remotes
         build :set_heroku_rails_secrets
+      end
+    end
+
+    def install_capistrano
+      if options[:capistrano]
+        say 'Installing capistrano'
+        build :copy_capistrano_configuration_files
       end
     end
 

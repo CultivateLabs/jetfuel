@@ -174,6 +174,11 @@ end
         after: /group :staging, :production do/
     end
 
+    def setup_capistrano_specific_gems
+      inject_into_file 'Gemfile', "\n\s\sgem 'capistrano',  '~> 3.2'\n\s\sgem 'capistrano-rails', '~> 1.1'",
+        after: /gem 'spring-commands-rspec'/
+    end
+
     def enable_database_cleaner
       copy_file 'database_cleaner_rspec.rb', 'spec/support/database_cleaner.rb'
     end
@@ -342,6 +347,18 @@ fi
       path_addition = override_path_for_tests
       run "#{path_addition} heroku config:add SECRET_KEY_BASE=#{generate_secret} --remote=staging"
       run "#{path_addition} heroku config:add SECRET_KEY_BASE=#{generate_secret} --remote=production"
+    end
+
+    def copy_capistrano_configuration_files
+      run "mkdir -p config/deploy"
+      template 'Capfile', 'Capfile'
+      template 'cap_deploy.erb', 'config/deploy.rb'
+      template 'cap_staging.rb.erb', 'config/deploy/staging.rb'
+      template 'cap_production.rb.erb', 'config/deploy/production.rb'
+      run "mkdir -p lib/capistrano/tasks"
+
+      replace_in_file 'config/deploy.rb', /GITHUB_REPO/, ask("What is your github repository address?")
+      replace_in_file 'config/deploy/production.rb', /IP_ADDRESS/, ask("What is your app's IP address?")
     end
 
     def create_github_repo(repo_name)
