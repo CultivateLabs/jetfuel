@@ -353,8 +353,8 @@ fi
       run "mkdir -p config/deploy"
       template 'Capfile', 'Capfile'
       template 'cap_deploy.erb', 'config/deploy.rb'
-      template 'cap_staging.rb.erb', 'config/deploy/staging.rb'
-      template 'cap_production.rb.erb', 'config/deploy/production.rb'
+      template 'cap_staging.erb', 'config/deploy/staging.rb'
+      template 'cap_production.erb', 'config/deploy/production.rb'
       run "mkdir -p lib/capistrano/tasks"
 
       replace_in_file 'config/deploy.rb', /GITHUB_REPO/, ask("What is your github repository address?")
