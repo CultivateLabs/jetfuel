@@ -147,6 +147,20 @@ This:
 * Configures staging with `RACK_ENV` and `RAILS_ENV` environment variables set
   to `staging`
 
+Capistrano
+----------
+
+You can optionally install capistrano if you are deploying to a VPS like Digital Ocean:
+
+    jetfuel app --capistrano true
+
+This:
+
+* Adds capistrano and capistrano-rails to your gemfile
+* Adds capistrano configuration files that should work with rails-fed-chef
+
+You will need to tell the generator what your github repository and the IP address for your server are. Otherwise, you'll need to update those values in `config/deploy.rb` and `config/deploy/production.rb` when you have everything set up.
+
 Git
 ---
 
