@@ -10,3 +10,12 @@ development: &default
 test:
   <<: *default
   database: <%= app_name %>_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: <%= app_name %>_production
+  pool: 5
+  username: <%= app_name %>
+  password: <%%= ENV['DB_PASS'] %>
