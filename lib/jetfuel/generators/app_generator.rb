@@ -38,6 +38,7 @@ module Jetfuel
       invoke :copy_miscellaneous_files
       invoke :customize_error_pages
       invoke :remove_routes_comment_lines
+      invoke :add_sidekiq_web_routes
       invoke :setup_git
       invoke :setup_database
       invoke :create_heroku_apps
@@ -93,7 +94,7 @@ module Jetfuel
       build :set_up_factory_girl_for_rspec
       build :generate_rspec
       build :configure_rspec
-      build :configure_background_jobs_for_rspec
+      build :configure_background_jobs
       build :enable_database_cleaner
       build :configure_spec_support_features
       build :configure_travis
@@ -219,6 +220,10 @@ module Jetfuel
 
     def remove_routes_comment_lines
       build :remove_routes_comment_lines
+    end
+
+    def add_sidekiq_web_routes
+      build :add_sidekiq_web_routes
     end
 
     def outro

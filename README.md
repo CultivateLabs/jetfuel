@@ -58,8 +58,7 @@ It includes application gems like:
 * [Bourbon](https://github.com/thoughtbot/bourbon) for Sass mixins
 * [Twitter Bootstrap](https://getbootstrap.com) for scaffold application styles
 * [Leather](https://github.com/dvanderbeek/leather) for Devise with styled views, a bootstrap UI Kit page, and some useful bootstrap component helpers
-* [Delayed Job](https://github.com/collectiveidea/delayed_job) for background
-  processing
+* [Sidekiq](https://github.com/mperham/sidekiq) for background job processing
 * [Email Validator](https://github.com/balexand/email_validator) for email
   validation
 * [Flutie](https://github.com/thoughtbot/flutie) for and `body_class` view
@@ -195,11 +194,6 @@ Snow Leopard (OS X 10.6).
 
 Use [Command Line Tools for XCode](https://developer.apple.com/downloads/index.action)
 for Lion (OS X 10.7) or Mountain Lion (OS X 10.8).
-
-We use [Capybara Webkit](https://github.com/thoughtbot/capybara-webkit) for
-full-stack JavaScript integration testing. It requires QT. Instructions for
-installing QT are
-[here](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit).
 
 PostgreSQL needs to be installed and running for the `db:create` rake task.
 

@@ -1,19 +1,17 @@
-module BackgroundJobs
-  def run_background_jobs_immediately
-    delay_jobs = Delayed::Worker.delay_jobs
-    Delayed::Worker.delay_jobs = false
-    yield
-  ensure
-    Delayed::Worker.delay_jobs = delay_jobs
-  end
-end
-
+require 'sidekiq/testing'
 RSpec.configure do |config|
-  config.around(:each, type: :feature) do |example|
-    run_background_jobs_immediately do
-      example.run
+  config.before(:each) do | example |
+    # Clears out the jobs for tests using the fake testing
+    Sidekiq::Worker.clear_all
+
+    if example.metadata[:sidekiq] == :fake
+      Sidekiq::Testing.fake!
+    elsif example.metadata[:sidekiq] == :inline
+      Sidekiq::Testing.inline!
+    elsif example.metadata[:type] == :acceptance
+      Sidekiq::Testing.inline!
+    else
+      Sidekiq::Testing.fake!
     end
   end
-
-  config.include BackgroundJobs
 end

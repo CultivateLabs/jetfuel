@@ -91,13 +91,13 @@ module Jetfuel
     end
 
     def setup_asset_host
-      replace_in_file 'config/environments/production.rb',
-        '# config.action_controller.asset_host = "http://assets.example.com"',
-        "config.action_controller.asset_host = ENV.fetch('ASSET_HOST')"
+      # replace_in_file 'config/environments/production.rb',
+      #   '# config.action_controller.asset_host = "http://assets.example.com"',
+      #   "config.action_controller.asset_host = ENV.fetch('ASSET_HOST')"
 
-      replace_in_file 'config/environments/production.rb',
-        "config.assets.version = '1.0'",
-        "config.assets.version = ENV.fetch('ASSETS_VERSION')"
+      # replace_in_file 'config/environments/production.rb',
+      #   "config.assets.version = '1.0'",
+      #   "config.assets.version = ENV.fetch('ASSETS_VERSION')"
 
       replace_in_file 'config/environments/production.rb',
         'config.serve_static_assets = false',
@@ -175,7 +175,7 @@ end
     end
 
     def setup_capistrano_specific_gems
-      inject_into_file 'Gemfile', "\n\s\sgem 'capistrano',  '~> 3.2'\n\s\sgem 'capistrano-rails', '~> 1.1'",
+      inject_into_file 'Gemfile', "\n\s\sgem 'capistrano',  '~> 3.2'\n\s\sgem 'capistrano-rails', '~> 1.1'\n\s\sgem 'capistrano-sidekiq'",
         after: /gem 'spring-commands-rspec'/
     end
 
@@ -203,9 +203,10 @@ end
       copy_file 'i18n.rb', 'spec/support/i18n.rb'
     end
 
-    def configure_background_jobs_for_rspec
+    def configure_background_jobs
+      run 'mkdir app/workers'
       copy_file 'background_jobs_rspec.rb', 'spec/support/background_jobs.rb'
-      run 'bundle exec rails g delayed_job:active_record'
+      # run 'bundle exec rails g delayed_job:active_record'
     end
 
     def configure_action_mailer_in_specs
@@ -392,6 +393,16 @@ fi
       replace_in_file 'config/routes.rb',
         /Rails\.application\.routes\.draw do.*end/m,
         "Rails.application.routes.draw do\nend"
+    end
+
+    def add_sidekiq_web_routes
+      replace_in_file 'config/routes.rb',
+        /Rails\.application\.routes\.draw/,
+        "require 'sidekiq/web'\n\nRails.application.routes.draw"
+
+      replace_in_file 'config/routes.rb',
+      /\nend/,
+      "\n\s\smount Sidekiq::Web, at: '/sidekiq'\nend"
     end
 
     def disable_xml_params
