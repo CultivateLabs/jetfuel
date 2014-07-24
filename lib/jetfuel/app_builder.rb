@@ -315,11 +315,13 @@ end
       path_addition = override_path_for_tests
       heroku_account = ask("If you are using the heroku-accounts gem, what account would you like to use? (leave blank if n/a)")
       unless heroku_account.blank?
-        run "heroku accounts:set #{heroku_account}"
+        run "#{path_addition} heroku accounts:set #{heroku_account}"
       end
       run "#{path_addition} heroku create #{app_name}-production --remote=production"
       run "#{path_addition} heroku create #{app_name}-staging --remote=staging"
       run "#{path_addition} heroku config:add RACK_ENV=staging RAILS_ENV=staging --remote=staging"
+      email_recipient = ask("What email address do you want emails to be delivered to on staging?")
+      run "#{path_addition} heroku config:add EMAIL_RECIPIENTS=#{email_recipient}"
     end
 
     def set_heroku_remotes
