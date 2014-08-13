@@ -147,7 +147,7 @@ end
     end
 
     def add_bootstrap_js
-      inject_into_file 'app/assets/javascripts/application.js', "//= require bootstrap\n",
+      inject_into_file 'app/assets/javascripts/application.js', "//= require bootstrap\n//=require leather\n",
         after: /\/\/= require jquery_ujs\n/
     end
 
