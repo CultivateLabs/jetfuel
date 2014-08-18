@@ -32,7 +32,7 @@ class WarningSuppressor
 end
 
 Capybara.register_driver :poltergeist_custom do |app|
-  Capybara::Poltergeist::Driver.new(app, phantomjs_logger: WarningSuppressor, phantomjs_options: ['--proxy-type=socks5', '--proxy=0.0.0.0:0'])
+  Capybara::Poltergeist::Driver.new(app, phantomjs_logger: WarningSuppressor, phantomjs_options: ['--proxy-type=socks5', '--proxy=0.0.0.0:0', '--load-images=no', '--ignore-ssl-errors=yes'])
 end
   
 Capybara.javascript_driver = :poltergeist_custom
