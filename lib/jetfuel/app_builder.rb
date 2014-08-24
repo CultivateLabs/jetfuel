@@ -319,9 +319,9 @@ end
       end
       run "#{path_addition} heroku create #{app_name}-production --remote=production"
       run "#{path_addition} heroku create #{app_name}-staging --remote=staging"
-      run "#{path_addition} heroku config:add RACK_ENV=staging RAILS_ENV=staging --remote=staging"
+      run "#{path_addition} heroku config:set RACK_ENV=staging RAILS_ENV=staging --remote=staging"
       email_recipient = ask("What email address do you want emails to be delivered to on staging?")
-      run "#{path_addition} heroku config:add EMAIL_RECIPIENTS=#{email_recipient}"
+      run "#{path_addition} heroku config:set EMAIL_RECIPIENTS=#{email_recipient} --remote=staging"
     end
 
     def set_heroku_remotes
@@ -352,8 +352,8 @@ fi
 
     def set_heroku_rails_secrets
       path_addition = override_path_for_tests
-      run "#{path_addition} heroku config:add SECRET_KEY_BASE=#{generate_secret} --remote=staging"
-      run "#{path_addition} heroku config:add SECRET_KEY_BASE=#{generate_secret} --remote=production"
+      run "#{path_addition} heroku config:set SECRET_KEY_BASE=#{generate_secret} --remote=staging"
+      run "#{path_addition} heroku config:set SECRET_KEY_BASE=#{generate_secret} --remote=production"
     end
 
     def copy_capistrano_configuration_files
