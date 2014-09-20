@@ -272,6 +272,10 @@ end
       run "bundle exec rails g leather:install"
     end
 
+    def install_simple_form
+      run "bundle exec rails g simple_form:install --bootstrap"
+    end
+
     def setup_helpers
       remove_file 'app/helpers/application_helper.rb'
       copy_file 'application_helper.rb',

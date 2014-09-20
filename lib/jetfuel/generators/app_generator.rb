@@ -46,6 +46,7 @@ module Jetfuel
       invoke :create_github_repo
       invoke :setup_segment_io
       invoke :install_leather
+      invoke :install_simple_form
       invoke :setup_devise
       invoke :outro
     end
@@ -162,6 +163,11 @@ module Jetfuel
     def install_leather
       say 'Install Leather'
       build :install_leather
+    end
+
+    def install_simple_form
+      say 'Install SimpleForm'
+      build :install_simple_form
     end
 
     def setup_git
