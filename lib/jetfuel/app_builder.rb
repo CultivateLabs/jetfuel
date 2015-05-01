@@ -86,8 +86,11 @@ module Jetfuel
   config.middleware.use Rack::Deflater
       RUBY
 
-      inject_into_file 'config/environments/production.rb', config,
-        :after => "config.serve_static_assets = false\n"
+      inject_into_file(
+        'config/environments/production.rb', 
+        config,
+        after: serve_static_files_line
+      )
     end
 
     def setup_asset_host
@@ -99,9 +102,11 @@ module Jetfuel
       #   "config.assets.version = '1.0'",
       #   "config.assets.version = ENV.fetch('ASSETS_VERSION')"
 
-      replace_in_file 'config/environments/production.rb',
-        'config.serve_static_assets = false',
-        'config.static_cache_control = "public, max-age=#{1.year.to_i}"'
+      inject_into_file(
+        'config/environments/production.rb',
+        'config.static_cache_control = "public, max-age=#{1.year.to_i}"',
+        after: serve_static_files_line
+      )
     end
 
     def setup_staging_environment
@@ -440,6 +445,10 @@ fi
 
     def generate_secret
       SecureRandom.hex(64)
+    end
+
+    def serve_static_files_line
+      "config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?\n"
     end
   end
 end
